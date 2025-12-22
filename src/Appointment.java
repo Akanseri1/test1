@@ -1,3 +1,4 @@
+import java.security.spec.RSAPublicKeySpec;
 import java.time.LocalDate;
 
 public class Appointment {
@@ -20,8 +21,28 @@ public class Appointment {
     public void cancel() {
         this.date = null;
     }
-
+    public int  getAppointmentId() {
+        return  appointmentId;
+    }
+    public String getPatientName() {
+    return patientName;
+    }
+    public String getDoctorName(){
+        return doctorName;
+    }
     public LocalDate getDate() {
-        return date;
+        return  date;
+    }
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
+

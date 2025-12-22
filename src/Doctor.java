@@ -19,7 +19,7 @@ public class Doctor {
         return experienceYears >= 10;
     }
 
-    
+    // getters
     public String getName() {
         return name;
     }

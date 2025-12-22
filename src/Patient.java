@@ -32,4 +32,27 @@ public class Patient {
     public String getFullName() {
         return fullName;
     }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setAge(int age) {
+        if (age >= 0) {
+            this.age = age;
+        }
+    }
+
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
+    }
 }
+
