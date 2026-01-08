@@ -2,27 +2,32 @@ public class Doctor extends Person {
     private String specialization;
     private int experience;
 
-    public Doctor(int id, String name, int age, String specialization, int experience) {
-        super(id, name, age, "Doctor");
-        this.specialization = specialization;
-        this.experience = experience >= 0 ? experience : 0;
+    public Doctor(String name, int age, String specialization, int experience) {
+        super(name, age);
+        setSpecialization(specialization);
+        setExperience(experience);
     }
+
+    public void setSpecialization(String specialization) {
+        if (specialization == null || specialization.trim().isEmpty())
+            throw new IllegalArgumentException("Specialization cannot be empty");
+        this.specialization = specialization;
+    }
+
+    public void setExperience(int experience) {
+        if (experience < 0) throw new IllegalArgumentException("Experience cannot be negative");
+        this.experience = experience;
+    }
+
+    public boolean isSenior() { return experience >= 10; }
 
     @Override
     public void work() {
-        System.out.println("Doctor " + name + " is treating patients.");
+        System.out.println("Doctor " + getName() + " is treating patients.");
     }
 
     @Override
-    public String getRole() {
-        return "Doctor";
-    }
+    public String getRole() { return "Doctor"; }
 
-    public boolean isSeniorDoctor() {
-        return experience >= 10;
-    }
-
-    public String getSpecialization() {
-        return specialization;
-    }
+    public String getSpecialization() { return specialization; }
 }

@@ -1,27 +1,31 @@
 public class Person {
-    protected int id;
-    protected String name;
-    protected int age;
-    protected String role;
+    private String name;
+    private int age;
 
-    public Person(int id, String name, int age, String role) {
-        this.id = id;
+    public Person(String name, int age) {
+        setName(name);
+        setAge(age);
+    }
+
+    public String getName() { return name; }
+    public int getAge() { return age; }
+
+    public void setName(String name) {
+        if (name == null || name.trim().isEmpty())
+            throw new IllegalArgumentException("Name cannot be empty");
         this.name = name;
-        this.age = age >= 0 ? age : 0;
-        this.role = role;
+    }
+
+    public void setAge(int age) {
+        if (age < 0) throw new IllegalArgumentException("Age cannot be negative");
+        this.age = age;
     }
 
     public void work() {
         System.out.println(name + " is in the hospital.");
     }
 
-    public String getRole() {
-        return "Person";
-    }
-
-    public boolean isAdult() {
-        return age >= 18;
-    }
+    public String getRole() { return "Person"; }
 
     @Override
     public String toString() {
