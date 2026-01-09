@@ -6,7 +6,7 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        people.add(new Doctor("Dr. Saken", 45, "Therapist", 15));
+        people.add(new Doctor("Drr. Saken", 45, "Therapist", 15));
         people.add(new Patient("Aruzhan", 22, "Flu", true));
 
         while (true) {
